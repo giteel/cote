@@ -9,14 +9,14 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
         int[] arr = new int[9];
+        int total = 0;
         
         for(int i=0; i<9; i++) {
             st = new StringTokenizer(br.readLine());
             arr[i] = Integer.parseInt(st.nextToken());
+            total += arr[i];
         }
         
-        int total = 0;
-        for (int i=0; i<9; i++) total += arr[i];
         int except = total - 100;
         boolean terminate = false;
         for (int i=0; i<8; i++) {
