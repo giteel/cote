@@ -15,8 +15,6 @@ public class Main {
             arr[i] = Integer.parseInt(st.nextToken());
         }
         
-        Arrays.sort(arr);
-        
         int total = 0;
         for (int i=0; i<9; i++) total += arr[i];
         int except = total - 100;
@@ -24,7 +22,7 @@ public class Main {
         for (int i=0; i<8; i++) {
             for (int j=i+1; j<9; j++) {
                 if (arr[i]+arr[j] == except) {
-                    arr[i] = arr[j] = 0;
+                    arr[i] = arr[j] = 100;
                     terminate = true;
                     break;
                 }
@@ -32,9 +30,10 @@ public class Main {
             if (terminate) break;
         }
         
+        Arrays.sort(arr);
         
-        for (int i=0; i<9; i++) {
-            if (arr[i] != 0) System.out.println(arr[i]); 
+        for (int i=0; i<7; i++) {
+            System.out.println(arr[i]); 
         }
     }
 }
