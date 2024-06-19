@@ -1,6 +1,8 @@
 import java.io.IOException;
 //import java.io.BufferedReader;
 //import java.io.InputStreamReader;
+import java.io.BufferedWriter;
+import java.io.OutputStreamWriter;
 import java.io.StreamTokenizer;
 
 public class Main {
@@ -8,7 +10,7 @@ public class Main {
         StreamTokenizer st = new StreamTokenizer(System.in);
         //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         
-        
+        BufferedWriter br = new BufferedWriter(new OutputStreamWriter(System.out)); 
         //StringTokenizer st;
         StringBuilder sb = new StringBuilder();
         st.nextToken();
@@ -27,6 +29,8 @@ public class Main {
             sb.append(a+b).append("\n");
         }
         
-        System.out.println(sb.toString());
+        //System.out.println(sb.toString());
+        br.write(sb.toString());
+        br.flush();
     }
 }
