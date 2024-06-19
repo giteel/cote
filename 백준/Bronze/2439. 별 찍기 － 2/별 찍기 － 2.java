@@ -7,6 +7,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
         int n = Integer.parseInt(br.readLine());
+        br.close();
         
         for (int i=1; i<=n; i++) {
             for(int j=n; j>i; j--) {
@@ -17,6 +18,6 @@ public class Main {
             }
             sb.append("\n");
         }
-        System.out.println(sb.toString());
+        System.out.println(sb);
     }
 }
