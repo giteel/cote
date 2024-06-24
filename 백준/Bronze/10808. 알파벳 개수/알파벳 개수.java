@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        
+        StringBuilder sb = new StringBuilder();
         String s = br.readLine();
         br.close();
         
@@ -18,11 +18,10 @@ public class Main {
             answer[s.charAt(i) - 'a']++;
         }
         
-        StringBuilder sb = new StringBuilder();
-        for (int a : answer) {
-            sb.append(a).append(" ");
+        for (int i=0; i<26; i++) {
+            sb.append(answer[i]).append(" ");
         }
-        
+               
         bw.write(sb.toString());
         bw.flush();
         
