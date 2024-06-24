@@ -7,19 +7,22 @@ import java.io.OutputStreamWriter;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        char[] arr = br.readLine().toCharArray();
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        
+        String s = br.readLine();
         br.close();
+        
         int[] answer = new int[26];
         
-        for (char c : arr) {
-            int a =  ((int) c) - 97;
-            answer[a]++;
+        for (int i=0; i<s.length(); i++) {
+            answer[s.charAt(i) - 'a']++;
         }
+        
         StringBuilder sb = new StringBuilder();
         for (int a : answer) {
             sb.append(a).append(" ");
         }
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        
         bw.write(sb.toString());
         bw.flush();
         
