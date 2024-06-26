@@ -10,28 +10,19 @@ public class Main {
         int n = Integer.parseInt(br.readLine());
         StringTokenizer st = new StringTokenizer(br.readLine());
         int[] arr = new int[n];
+        boolean[] nums = new boolean[1000001];
         for (int i=0; i<n; i++) {
-            arr[i] = Integer.parseInt(st.nextToken());
+            int temp = Integer.parseInt(st.nextToken());
+            arr[i] = temp;
+            nums[temp]= true;
         }
         int x = Integer.parseInt(br.readLine());
-        Arrays.sort(arr);
         
         int count = 0;
         for (int i=0; i<n; i++) {
-            if (arr[i] > x) break;
-            
-            int j = n - 1;
-            while (i < j) {
-                if (arr[i] + arr [j] > x) {
-                    j--;
-                } else if (arr[i] + arr[j] == x) {
-                    count++;
-                    break;
-                } else {
-                    break;
-                }
-            }
+            int temp = x - arr[i];
+            if (temp >0 && temp <= 1000000 && nums[temp] ) count++;
         }
-        System.out.println(count);
+        System.out.println(count/2);
     }
 }
