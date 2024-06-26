@@ -2,24 +2,23 @@ import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
+import java.util.Map;
+import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
-        int[] arr = new int[N];
         StringTokenizer st = new StringTokenizer(br.readLine());
+        Map<Integer, Integer> hm = new HashMap<Integer, Integer>();
         
         for (int i=0; i<N; i++) {
-            arr[i] = Integer.parseInt(st.nextToken());
+            int key = Integer.parseInt(st.nextToken());
+            hm.put(key, hm.getOrDefault(key, 0) + 1);
         }
         
         int v = Integer.parseInt(br.readLine());
         
-        int count = 0;
-        for (int i=0; i<arr.length; i++) {
-            if (arr[i] == v) count++;
-        }
-        System.out.print(count);
+        System.out.print(hm.getOrDefault(v, 0));
     }
 }
