@@ -17,9 +17,9 @@ public class Main {
             String mw = st.nextToken();
             int grade = Integer.parseInt(st.nextToken());
             if (mw.equals("0")) {
-                w_grade[grade]++;
+                w_grade[grade-1]++;
             } else {
-                m_grade[grade]++;
+                m_grade[grade-1]++;
             }
         }
         int count = 0;
